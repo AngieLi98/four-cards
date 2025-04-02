@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$color-cyan: hsl(180, 62%, 55%);
+$color-red: hsl(0, 78%, 62%);
+$color-orange: hsl(34, 97%, 64%);
+$color-blue:hsl(212, 86%, 64%);
+$color-cards: hsl(0, 0%, 100%);
+$color-title: hsl(234, 12%, 34%);
+$color-text: hsl(212, 6%, 44%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+body {
+    background-color: rgb(241, 241, 241);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+@mixin title-style($size, $weight) {
+    color: $color-title;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+.introdution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    h1 {
+        @include title-style(1.5rem, 200);
+    }
+
+    h2 {
+        @include title-style(1.5rem, 600);
+    }
+
+    p {
+        @include title-style(1rem, 400);
+        text-align: center;
+        max-width: 34rem;
+    }
+}
+
+$card-colors: (
+    supervisor: $color-cyan,
+    team: $color-red,
+    karma: $color-orange,
+    calculator: $color-blue
+);
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 3rem;
+
+    @each $name, $color in $card-colors {
+        .#{$name} {
+            border-top: 4px solid $color;
+        }
+    }
+
+    .supervisor {
+        grid-row: 2 / 4;
+        grid-column: 1;
+    }
+
+    .team {
+        grid-row: 1 / 3;
+        grid-column: 2;
+    }
+
+    .karma {
+        grid-row: 3 / 5;
+        grid-column: 2;
+    }
+
+    .calculator {
+        grid-row: 2 / 4;
+        grid-column: 3;
+    }
+
+    article {
+        background-color: $color-cards;
+        border-radius: 5px;
+        padding: 2rem;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); 
+    
+        h3 {
+            @include title-style(1.2rem, 600);
+        }
+    
+        p {
+            color:$color-text;
+            font-size: 1rem;
+        }
+
+        img {
+            float: right;
+
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        padding: 1rem;
+        padding-bottom: 2.5rem;
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin-top: 2rem;
+
+            article {
+                max-width: 90%;
+                width: 100%;
+            }
+        }
+    }
+    
+}

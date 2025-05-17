@@ -34,15 +34,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
     padding: 1rem;
 
     h1 {
-        @include title-style(1.5rem, 200);
+        @include title-style(2.4rem, 200);
     }
 
     h2 {
-        @include title-style(1.5rem, 600);
+        @include title-style(2.4rem, 600);
     }
 
     p {
@@ -108,6 +108,7 @@ $card-colors: (
         }
 
         img {
+            padding-top: 1.5rem;
             float: right;
 
         }

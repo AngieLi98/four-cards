@@ -19,17 +19,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   padding: 1rem;
 }
 .introdution h1 {
   color: hsl(234, 12%, 34%);
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 200;
 }
 .introdution h2 {
   color: hsl(234, 12%, 34%);
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 .introdution p {
@@ -91,6 +91,7 @@ body {
   font-size: 1rem;
 }
 .cards article img {
+  padding-top: 1.5rem;
   float: right;
 }
 
